@@ -1,0 +1,2 @@
+# sequelizedBurger
+Sequelized Homework
