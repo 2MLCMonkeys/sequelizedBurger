@@ -4,24 +4,38 @@
       <img src="http://freepngimages.com/wp-content/uploads/2016/11/bacon-burger.png" height="200" class="center-block">
       <h1 class="text-center title">Eat-Da-Burger!</h1>
     </div>
+  <div class="row">
+    <div class="col-md-12">
+      <form class="create-update-form" action="/" method="POST">
+
+        <div class="form-group float">
+          {{!-- <label for="ca">Burger Name:</label> --}}
+          <input type="text" id="ca" name="name" class="center-block burger_field">
+        </div>
+
+        <button type="submit" class="center-block btn btn-primary">Submit</button>
+        <p class="text-center">Enter a burger you want to eat and click the "Submit" button</p>
+      </form>
+    </div>
+  </div>
   </div>
   <br>
   <div class="row justify-content-center">
     {{!-- burger column --}}
-    <div class="col-md">
+    <div class="col-md-7">
 
       <div>
         {{#each burgers}}
         {{#unless this.devoured}}
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-7">
             <div class="uneaten">
               <p class="text-center">
                 {{this.id}}. {{this.burger_name}}
               </p>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-5">
             <div>
               <form action="/{{this.id}}" method="POST">
                 <input type="text" id="ca" name="customer" class="float">
@@ -38,7 +52,7 @@
     </div>
 
 
-    <div class="col-md-3">
+    <div class="col-md-5">
       {{#each burgers}}
       {{#if this.devoured}}
       <div class="eaten">
@@ -51,19 +65,5 @@
     </div>
   </div>
   <br>
-  <div class="row">
-    <div class="col-md-12">
-      <form class="create-update-form" action="/" method="POST">
-
-        <div class="form-group">
-          {{!-- <label for="ca">Burger Name:</label> --}}
-          <input type="text" id="ca" name="name" class="center-block burger_field">
-        </div>
-
-        <button type="submit" class="center-block btn btn-primary">Submit</button>
-        <p class="text-center">Enter a burger you want to eat and click the "Submit" button</p>
-      </form>
-    </div>
-  </div>
 
 </div>
