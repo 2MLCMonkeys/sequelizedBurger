@@ -1,0 +1,35 @@
+{
+  "name": "sequelizedburger",
+  "version": "1.0.0",
+  "description": "burger app sequelized",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2MLCMonkeys/sequelizedBurger.git"
+  },
+  "keywords": [
+    "burger",
+    "sequelized"
+  ],
+  "author": "2mlcmonkeys",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/2MLCMonkeys/sequelizedBurger/issues"
+  },
+  "homepage": "https://github.com/2MLCMonkeys/sequelizedBurger#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "method-override": "^3.0.0",
+    "mysql": "^2.17.1",
+    "mysql2": "^1.7.0",
+    "sequelize": "^5.17.0",
+    "sequelize-cli": "^5.5.0"
+  }
+}
