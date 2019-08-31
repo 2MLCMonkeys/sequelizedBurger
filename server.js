@@ -1,29 +1,32 @@
-// Dependencies
-var express = require('express');
-var methodOverride = require('method-override');
-var bodyParser = require('body-parser');
-var exphbs = require("express-handlebars");
+var express = require("express");
+var bodyParser = require("body-parser");
+var methodOverride = require("method-override");
+var path = require("path");
 
-// Sets up the Express App
+var PORT = process.env.PORT || 3000;
+
 var app = express();
-var PORT = process.env.PORT || 8080;
 
-// Models to sync
 var db = require("./models");
 
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static("public"));
+
 app.use(bodyParser.urlencoded({ extended: false }));
+
+// Override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
+
+// Set Handlebars.
+var exphbs = require("express-handlebars");
+
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-// Serve files in 'public' directory
-app.use(express.static('public'));
+// Import routes and give the server access to them.
+require("./routes/burger-api-routes.js")(app);
 
-// Load routes
-app.use(require('./controllers/burgers_controller'));
-
-// Sync models then start the server to begin listening
-db.sequelize.sync().then(function() {
+db.sequelize.sync({ force: false }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
