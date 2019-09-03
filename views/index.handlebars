@@ -1,11 +1,15 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12">
-      <img src="http://freepngimages.com/wp-content/uploads/2016/11/bacon-burger.png" height="200" class="center-block">
-      <h1 class="text-center title">Eat-Da-Burger!</h1>
-    </div>
-  <div class="row">
-    <div class="col-md-12">
+<div class="container">
+  <!-- JUMBOTRON -->
+  <div id="jumbo" class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <img id="burger1"
+        src="https://www.freepnglogos.com/uploads/burger-png/burger-png-png-images-yellow-images-12.png">
+      <h1 id="burgerH" class="display-4 text-center">Eat Da Burger</h1>
+      <img id="burger2"
+        src="https://www.freepnglogos.com/uploads/burger-png/burger-png-png-images-yellow-images-12.png">
+
+      {{!-- SUBMIT A BURGER  --}}
+      <p id="p-jumbo" class="text-center lead">Enter a burger you want to create and click the "Submit" button</p>
       <form class="create-update-form" action="/" method="POST">
 
         <div class="form-group float">
@@ -14,56 +18,34 @@
         </div>
 
         <button type="submit" class="center-block btn btn-primary">Submit</button>
-        <p class="text-center">Enter a burger you want to eat and click the "Submit" button</p>
       </form>
     </div>
   </div>
-  </div>
-  <br>
-  <div class="row justify-content-center">
-    {{!-- burger column --}}
-    <div class="col-md-7">
-
-      <div>
-        {{#each burgers}}
-        {{#unless this.devoured}}
-        <div class="row">
-          <div class="col-md-7">
-            <div class="uneaten">
-              <p class="text-center">
-                {{this.id}}. {{this.burger_name}}
-              </p>
-            </div>
-          </div>
-          <div class="col-md-5">
-            <div>
-              <form action="/{{this.id}}" method="POST">
-                <input type="text" id="ca" name="customer" class="float">
-                <input type="hidden" name="devoured" value="true">
-                <button type="submit" class="center-block" id="submit">MMM Yummy!</button>
-              </form>
-            </div>
-          </div>
-        </div>
-        {{/unless}}
-        {{/each}}
-      </div>
-
-    </div>
-
-
-    <div class="col-md-5">
-      {{#each burgers}}
-      {{#if this.devoured}}
-      <div class="eaten">
-        <p class="text-center">
-          {{this.id}}. {{this.burger_name}} {{#if this.Customer.name}}(Eaten by {{this.Customer.name}}){{/if}}
-        </p>
-      </div>
-      {{/if}}
-      {{/each}}
+  <!-- CARDS FOR BURGERS  -->
+  {{#each burgers}}
+  {{#unless this.devoured}}
+  <div class="card w-75">
+    <div class="uneaten card-body">
+      <h5 class="card-title">{{this.id}}. {{this.burger_name}}</h5>
+      <p class="card-text">Please enter customer's name below.</p>
+      <form action="/{{this.id}}" method="POST">
+        <input type="text" id="ca" name="customer" class="float">
+        <input type="hidden" name="devoured" value="true">
+        <button type="submit" class="center-block" id="submit">Eat It!</button>
+      </form>
     </div>
   </div>
-  <br>
-
+  {{/unless}}
+  {{/each}}
+  <!-- CARDS FOR EATEN BURGER  -->
+  {{#each burgers}}
+  {{#if this.devoured}}
+  <div class="card w-75">
+    <div class="eaten card-body">
+      <h5 class="card-title">{{this.id}}. {{this.burger_name}}</h5>
+      <p class="card-text">{{#if this.Customer.name}}(Eaten by {{this.Customer.name}}){{/if}}</p>
+    </div>
+  </div>
+  {{/if}}
+  {{/each}}
 </div>

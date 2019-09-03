@@ -1,42 +1,53 @@
 .body {
-	background-color: red;
-	margin: 0px;
-	padding: 0px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-image: url('../img/background.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
-.title {
-	color: white;
+#jumbo{
+  margin-top: 30px;
+  background-color: burlywood;
+
 }
 
-.uneaten {
-	background-color: #e3e3e3;
-	border-style: solid;
-	border-width: 2px;
-	border-color: #c4c3c3;
-	margin: 2px 0px 2px 0px;
-	padding: 1px;
-}
-
-.eaten {
-	background-color: #868585;
-	border-style: solid;
-	border-width: 2px;
-	border-color: #c4c3c3;
-	margin: 2px 0px 2px 0px;
-	padding: 1px;
-	color: #c4c3c3;
-}
-
-.class{
+#burgerH{
   float: left;
-
+  padding-left:55px;
+  padding-right:55px;
+  margin-bottom: 20px;
 }
 
-#submit{
+#burger1{
+  width:25%;
+  float: left;
+}
+
+#burger2{
+  width:25%;
   float: right;
+  margin-right: 0px;
 }
 
-.burger_field {
-	width: 250px;
-	height: 50px;
+#p-jumbo{
+  clear: both;
+  overflow: auto;
+  margin-bottom: 10px;
+}
+
+.uneaten{
+  margin: auto;
+  width: 80%;
+  background-color: darksalmon;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.eaten{
+  padding: 10px;
+  margin-top: 20px;
+  width: 80%;
+  margin: auto;
+  background-color: darkred;
 }
