@@ -1,4 +1,4 @@
-<div class="container">
+<div class="contain container">
   <!-- JUMBOTRON -->
   <div id="jumbo" class="jumbotron jumbotron-fluid">
     <div class="container">
@@ -22,27 +22,29 @@
     </div>
   </div>
   <!-- CARDS FOR BURGERS  -->
+  <span><h2 class="label-menu">ON THE MENU</h2></span>
   {{#each burgers}}
   {{#unless this.devoured}}
   <div class="card w-75">
     <div class="uneaten card-body">
-      <h5 class="card-title">{{this.id}}. {{this.burger_name}}</h5>
+      <h3 class="card-title">{{this.id}}. {{this.burger_name}}</h3>
       <p class="card-text">Please enter customer's name below.</p>
       <form action="/{{this.id}}" method="POST">
         <input type="text" id="ca" name="customer" class="float">
         <input type="hidden" name="devoured" value="true">
-        <button type="submit" class="center-block" id="submit">Eat It!</button>
+        <button type="submit" class="eat-button center-block" id="submit">Eat It!</button>
       </form>
     </div>
   </div>
   {{/unless}}
   {{/each}}
   <!-- CARDS FOR EATEN BURGER  -->
+  <span><h2 class="label-menu">EATEN BURGERS</h2></span>
   {{#each burgers}}
   {{#if this.devoured}}
-  <div class="card w-75">
-    <div class="eaten card-body">
-      <h5 class="card-title">{{this.id}}. {{this.burger_name}}</h5>
+  <div class="eaten card w-75">
+    <div class="card-body">
+      <h3 class="card-title">{{this.id}}. {{this.burger_name}}</h3>
       <p class="card-text">{{#if this.Customer.name}}(Eaten by {{this.Customer.name}}){{/if}}</p>
     </div>
   </div>

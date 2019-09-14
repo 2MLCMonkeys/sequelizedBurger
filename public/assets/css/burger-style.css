@@ -4,9 +4,21 @@
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  text-align: center;
+  font-size: 20px;
+}
+
+
+
+.contain{
+  margin-bottom: 50px;
 }
 
 #jumbo{
+  border-radius: 15px;
+  border-color: black;
+  border-width: 5px;
+  border-style: groove;
   margin-top: 30px;
   background-color: burlywood;
 
@@ -38,16 +50,54 @@
 
 .uneaten{
   margin: auto;
-  width: 80%;
+  width: 48%;
+  display: inline-block;
   background-color: darksalmon;
   padding: 10px;
-  margin-bottom: 10px;
+  margin: 10px;
+  float: left;
+  border-radius: 15px;
+  border-color: darkred;
+  border-width: 5px;
+  border-style: groove;
 }
 
 .eaten{
+  border-radius: 15px;
+  border-color: darksalmon;
+  border-width: 5px;
+  border-style: groove;
   padding: 10px;
-  margin-top: 20px;
-  width: 80%;
   margin: auto;
+  margin: 10px;
+  width: 48%;
+  display: inline-block;
   background-color: darkred;
+  color: darksalmon;
+  float: left;
+}
+
+.eat-button{
+  margin: 5px;
+}
+
+.label-menu{
+  background-color: whitesmoke;
+  color: darkred;
+  width: 30%;
+  padding: 20px;
+  font-size: 30px;
+  display: inline-block;
+  clear: both;
+  overflow: auto;
+  font-weight: bold;
+  border-radius: 15px;
+  border-color: darkred;
+  border-width: 5px;
+  border-style: groove;
+}
+
+span{
+  width: 100%;
+  float: left;
 }
