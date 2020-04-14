@@ -24,3 +24,7 @@ Eat-Da-Burger is a user inactive application where any burger you can imagine ca
 1. Required to hide credentials for deployed version of Heroku
 2. Use of handlebars for application
 3. Using sequelize to populate and use database in MySQL
+
+![CREATE A BURGER](/public/img/burger1.png)
+![CREATE A CLIENT](/public/img/burger2.png)
+![CLIENT ATE BURGER](/public/img/burger3.png)
