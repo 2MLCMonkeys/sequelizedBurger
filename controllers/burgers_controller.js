@@ -2,10 +2,10 @@ var express = require("express");
 
 var router = express.Router();
 
-// Import the model (cat.js) to use its database functions.
+// IMPORT BURGER MODEL
 var burger = require("../models/burger.js");
 
-// Create all our routes and set up logic within those routes where required.
+// GET BURGER DATA 
 router.get("/", function(req, res) {
   burger.selectAll(function(data) {
     var hbsObject = {
@@ -15,14 +15,14 @@ router.get("/", function(req, res) {
     res.render("index", hbsObject);
   });
 });
-
+// POSTS CREATED BURGER
 router.post("/", function(req, res) {
   burger.insertOne("burger_name",
     req.body.name, function() {
     res.redirect("/");
   });
 });
-
+// ADDS CUSTOMER TO BURGER AND UPDATES DATA
 router.put("/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
@@ -34,5 +34,5 @@ router.put("/:id", function(req, res) {
 });
 
 
-// Export routes for server.js to use.
+// EXPORT ROUTES
 module.exports = router;
