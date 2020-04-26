@@ -2,7 +2,7 @@
 Eat-Da-Burger is a user inactive application where any burger you can imagine can be ordered. Once submitted it will populate the other burgers waiting to be eaten! YUM! Once a burger is decided upon the customer enters their name and eats it. After completeing their meal, the burger is removed from the menu and placed with a history of devoured burgers!
 
 ## Deployed on Heroku
-*https://secure-cliffs-44964.herokuapp.com/
+[EAT-DA-BURGER](https://secure-cliffs-44964.herokuapp.com/)
 
 ## App Incorporation
 - Node.js
@@ -11,14 +11,14 @@ Eat-Da-Burger is a user inactive application where any burger you can imagine ca
 - Heroku
 
 ### Node Modules 
-   - "dotenv": "^8.1.0",
-   - "express": "^4.17.1",
-   - "express-handlebars": "^3.1.0",
-   - "method-override": "^3.0.0",
-   - "mysql": "^2.17.1",
-   - "mysql2": "^1.7.0",
-   - "sequelize": "^5.17.0",
-   - "sequelize-cli": "^5.5.0"
+   - dotenv
+   - express
+   - express-handlebars
+   - method-override
+   - mysql
+   - mysql2
+   - sequelize
+   - sequelize-cli
    
 ### Key Goals
 1. Required to hide credentials for deployed version of Heroku
